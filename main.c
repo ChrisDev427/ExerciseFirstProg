@@ -1,16 +1,15 @@
+
+// Exercice...
+// Prototypes et fonctions dans des fichiers séparés...
+
+// ChrisDev427 - 02-08-2022 
+
+// main.c
+
 #include <stdio.h>
 #include <stdlib.h>
-
-
-// Prototypes des fonctions : 
-int menu();
-int addition(int a, int b);
-int multiplication(int a, int b);
-int soustraction(int a, int b);
-int carre(int a);
-double division(double a, double b);
-double surface(double a, double b);
-double volume(double a, double b, double c);
+#include "fonctions.h"
+#include "fonctions.c"
 
 
 
@@ -70,88 +69,22 @@ int main(int argc, char *argv[])
         break;
 
         case 7:
-        printf("Entrez une largeur ");
+        printf("Entrez largeur ");
         scanf("%lf", &nombreDeci1);
-        printf("Entrez une longueur ");
+        printf("Entrez longueur ");
         scanf("%lf", &nombreDeci2);
-        printf("Entrez un hauteur");
+        printf("Entrez hauteur ");
         scanf("%lf", &nombreDeci3);
         printf("Le volume est de %lf m3\n\n", volume(nombreDeci1, nombreDeci2, nombreDeci3));
         break;
-
-       
-
-
-
         
+
     }
 
 
  return 0;
 } 
 
-
-//  Fonctions menu :
-
-int menu()
-{
-    int choix = 0;
-
-    while (choix < 1 || choix > 7)
-    {
-        printf("===Que voulez-vous calculer ?===\n");
-        printf("Une addition ? tapez 1\n");
-        printf("Une multiplication ? tapez 2\n");
-        printf("Une soustraction ? tapez 3\n");
-        printf("Une division ? tapez 4\n");
-        printf("Une racine carré ? tapez 5\n");
-        printf("Une surface ? tapez 6\n");
-        printf("Un volume ? tapez 7\n");
-        printf("Votre choix ? ");
-        scanf("%d", &choix);
-    }
-    return choix;
-}
-
-
-
-
-//  Fonctions des opérations : 
-
-int addition(int a, int b)
-{
-    return a + b;
-}
-
-int multiplication(int a, int b)
-{
-    return a * b;
-}
-
-int soustraction(int a, int b)
-{
-    return a - b;
-}
-
-int carre(int a)
-{
-    return a * a;
-}
-
-double division(double a, double b)
-{
-    return a / b;
-}
-
-double surface(double a, double b)
-{
-    return a * b;
-}
-
-double volume(double a, double b, double c)
-{
-    return a * b * c;
-}
 
 
 
